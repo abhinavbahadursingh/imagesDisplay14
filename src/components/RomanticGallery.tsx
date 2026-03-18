@@ -196,9 +196,7 @@ const RomanticGallery: React.FC = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-8"
         >
-          <h2 className="font-script text-4xl sm:text-6xl text-primary mb-2">
-            {isFinished ? "Our Forever" : "Our Story"}
-          </h2>
+          
           <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto" />
         </motion.div>
 
