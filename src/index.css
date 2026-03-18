@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Pinyon+Script&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 320 40% 98%;
+    --foreground: 320 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 320 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 320 20% 10%;
+
+    --primary: 330 70% 70%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 320 30% 95%;
+    --secondary-foreground: 320 20% 10%;
+
+    --muted: 320 30% 92%;
+    --muted-foreground: 320 10% 45%;
+
+    --accent: 330 70% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 320 30% 90%;
+    --input: 320 30% 90%;
+    --ring: 330 70% 70%;
+
+    --radius: 1.5rem;
+
+    --glass: 0 0% 100%;
+    --glass-border: 0 0% 100%;
+    
+    --romantic-pink: 330 70% 85%;
+    --romantic-lavender: 270 50% 90%;
+  }
+
+  .dark {
+    --background: 320 40% 5%;
+    --foreground: 320 40% 95%;
+    --card: 320 40% 8%;
+    --card-foreground: 320 40% 95%;
+    --popover: 320 40% 8%;
+    --popover-foreground: 320 40% 95%;
+    --primary: 330 70% 70%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 320 30% 15%;
+    --secondary-foreground: 320 40% 95%;
+    --muted: 320 30% 12%;
+    --muted-foreground: 320 20% 65%;
+    --accent: 330 70% 70%;
+    --accent-foreground: 320 40% 95%;
+    --border: 320 30% 20%;
+    --input: 320 30% 20%;
+    --ring: 330 70% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-script {
+    font-family: 'Pinyon Script', cursive;
+  }
+
+  .glass-morphism {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 182, 193, 0.5), 0 0 20px rgba(255, 182, 193, 0.3);
+  }
+
+  .ken-burns {
+    animation: kenburns 20s ease-in-out infinite alternate;
+  }
+
+  .floating {
+    animation: floating 6s ease-in-out infinite;
+  }
+
+  .light-leak {
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.1) translate(-2%, -2%); }
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes gradient-xy {
+  0%, 100% {
+    background-size: 400% 400%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-xy {
+  animation: gradient-xy 15s ease infinite;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
